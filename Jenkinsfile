@@ -4,7 +4,7 @@ node {
     stage('Clone repository') {
       
 
-        checkout scm
+        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/workwithmayuresh/kubernetescode.git']])
     }
 
     stage('Build image') {
